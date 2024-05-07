@@ -1,0 +1,30 @@
+@startuml Mantenimiento
+
+class Automovil{
+- int Automovil
+- String Marca 
+- String Modelo 
+- int AñoFabricacion
+- String TipoCombustible
+}
+
+class Mantenimiento{
+- int MantenimientoID
+- int Automovil 
+- String Tipo
+- String Description
+- int FechaMantenimiento
+- Double Costo
+}
+
+class Calificacion{
+- int CalificacionID
+- int Automovil 
+- Double Calificacion
+- String Comentario
+- int FechaCalificacion 
+}
+
+Mantenimiento "1"-- "*" Calificacion : tiene
+Mantenimiento "1"-- "1" Automovil: pertenece a 
+@enduml
